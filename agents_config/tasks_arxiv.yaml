@@ -1,0 +1,166 @@
+review_literature:
+  description: >
+    Conduct a rigorous, creative, and helpful literature review on the user's research topic, with the goal of helping them write a diverse, well-supported, and insightful 'Related Works' section in their article.
+
+    **HIGH-LEVEL OBJECTIVE**
+    Identify and recommend AT LEAST 10 peer-reviewed papers (or more, if useful) that are DIRECTLY RELEVANT or MEANINGFULLY ADJACENT to the user's topic. Each recommendation MUST BE BASED ON CONFIRMED EVIDENCE from the paper’s content.
+    
+    **GUIDELINES**
+                   
+        1. **Think before generating any search query**: 
+
+            - Make sure you understand the user's research, given the description of his research theme. Focus on its essence to search related papers.
+
+            - Think carefully before issuing any search. Generate a well-formed query that precisely targets a meaningful aspect of the research theme.
+        
+        2. **Carefully analyze the results**: 
+            - Carefully analyze the results returned to you by the search query. The results will show the paper title, the paper authors, a summary of the paper content and a link to the paper.
+              
+            - For each result, read the paper's summary and RIGOROUSLY ANALYZE to decide whether the paper is in fact related to the user's interest. REMEMBER, THE USER IS A VERY HARSH CRITIC, SO BE RIGOROUS IN YOUR ANALYSIS.
+
+            - Apply harsh scrutiny: Only shortlist papers that are clearly relevant, potentially insightful.
+
+            - Reject superficially related or irrelevant papers. Your credibility depends on the quality of your selections.
+        
+        3. **Confirm relevance via PDF inspection**:
+
+            For each shortlisted candidate:
+
+                - Open the paper’s PDF.
+                - Read the abstract and introduction to verify alignment with the user’s theme.
+
+            A paper CAN ONLY be added to the final recommendations if, BASED STRICTLY ON THE PDF CONTENT, you can confidently answer the questions below. EXPLICITLY STATE YOUR THOUGHTS when assessing whether you are able to answer each one of them.
+
+                  a. Is the paper clearly related to the user's research theme? Explain how.
+                  b. Does it offer a significant insight, method, dataset, or finding in the field?
+                  c. Can you accurately summarize the paper in ~100 words using only information from the paper?
+            
+            If you cannot answer all three questions based on the paper content, DO NOT include the paper. 
+            It does NOT matter if by the title the paper seems related. If the ONLY through reading its content you can't answer the questions, DON'T RECOMMEND IT.
+
+            
+            NOTE: The answers to these questions should help you write the text in the recommendation list, if the paper is selected.
+        
+            - If you recommend in your final answer to the user an article that you haven't opened the PDF or that you have not confirmed to be related to the user's theme through answering the questions above , your credibility and reputation as researcher will decrease significantly.
+
+    **TIPS**
+        - Be creative in your search queries: Gather relevant and important articles, that are strongly related to the user's theme. But also feel free to extend your search to neighboring themes if they they could add meaningful context to the user's research to ensure a rich and comprehensive literature review!
+
+        - You may get inspiration for your search queries using content from selected articles. 
+
+        - Ensure Uniqueness and Non-Redundancy:
+            - Avoid duplicate entries or repeated searches.
+            
+            - If you need more candidates, refine, broaden, or pivot your queries.
+    
+    **RULES**
+
+      - YOU SHOULD ONLY INCLUDE papers after READING THE PDF and VERIFYING RELEVEANCE. MAKE SURE ALL THE PAPERS IN YOUR LIST YOU HAVE OPENED AND CONFIRMED ITS RELEVANCE.
+
+      - Do NOT recommend anything you haven’t read or can’t justify. IF RECOMMEND SOMETHING WITHOUT OPENING THE PDF, YOU RESEARCHER REPUTATION AND CREDIBILITY WILL GO DOWN TO ZERO.
+
+      - Provide at least 10 high-quality papers. More are welcome.
+
+      - Be diligent, creative, critical and make sure to follow these rules — your reputation as a researcher is at stake.
+
+
+    **USER RESEARCH THEME**:
+      
+      {research_theme}
+    
+  expected_output: >
+    A comprehensive, rich, diverse and helpful list of recommended articles related to the user's project.
+
+    **IMPORTANT**: ONLY PAPERS WHOSE PDF YOU HAVE  VERIFIED TO BE OF THE USER'S INTEREST SHOULD GO TO YOUR OUTPUT LIST.
+
+    Your recommendations list MUST provide full and comprehensive description of what the paper recommended is about.
+    Also, give a rich explanation of why and how it relates to the user research. 
+
+
+    1. TITLE: <<INSERT ARTICLE NAME>>, 
+    Authors: <<INSERT AUTHORS HERE>>
+    Link: <<INSERT ARTICLE LINK>>
+    <<EXPLAIN HOW THE PAPER IS RELATED TO THE USER'S THEME. HIGHLIGHT THE PAPER'S MAIN POINTS OR FINDINGS. FINALLY, PROVIDE A BRIEF DESCRIPTION AND SUMMARY OF IT>>
+                   
+      ...
+                   
+    N. TITLE: <<INSERT ARTICLE NAME>>
+    Authors: <<INSERT AUTHORS HERE>>
+    Link: <<INSERT ARTICLE LINK>>
+    <<EXPLAIN HOW THE PAPER IS RELATED TO THE USER'S THEME. HIGHLIGHT THE PAPER'S MAIN POINTS OR FINDINGS. FINALLY, PROVIDE A BRIEF DESCRIPTION AND SUMMARY OF IT>>
+    
+
+related_works_writing:
+  description: >
+    Write a high-quality "Related Works" section for a NeurIPS submission that effectively positions the current research within the broader academic landscape while highlighting novel contributions and differentiating factors.
+    
+    **CONTENT REQUIREMENTS**
+                   
+        1. **Thematic Organization**: 
+
+            - Group papers by research themes, methodological approaches, or problem domains rather than chronological order. 
+        
+        2. **Critical Analysis**: 
+        
+            - Don't just summarize—analyze relationships, identify gaps, and highlight evolution of ideas
+        
+        3. **Technical Accuracy**: 
+        
+            - Ensure all technical details and claims about related works are precise.
+
+            - Base your writing STRICTLY on the paper's information that is provided to you. DON'T MAKE UP ANY INFORMATION.
+
+    **WRITING STANDARDS**
+
+        1. **Academic Tone**: Formal, objective, and scholarly language appropriate for NeurIPS.
+
+        2. **Flow**: Smooth transitions between papers and themes.
+
+        3. **Citations*: Proper academic citation format (assume BibTeX entries will be provided separately).
+
+        4. **Accuracy**: Faithful representation of each paper's contributions.
+
+        5. **Clarity**: Complex ideas explained accessibly without oversimplification.
+
+        6. **Coherence**: Logical flow that tells a compelling story of research evolution.
+
+        7. **Originality**: Unique synthesis that goes beyond simple summarization
+    
+    **STRUCTURE GUIDELINES**
+
+        1. **Opening**: Brief paragraph establishing the research area and its importance.
+
+        2. **Thematic Subsections**: Organize by methodology, problem type, or research direction.
+
+        3. **Comparative Analysis**: Highlight key differences and similarities between approaches.
+
+        4. **Gap Identification**: Subtly identify limitations or unexplored areas that justify the current work.
+    
+    **QUALITY CRITERIA**
+
+        - Understand the current state of research in the field.
+
+        - Appreciate how existing works relate to each other.
+
+        - Clearly see where the current submission fits and what gap it addresses.
+
+    **TIPS**
+        - Ensure claims about related works are supported by the provided descriptions.
+
+        - If conflicting information exists between papers, acknowledge different perspectives
+
+        - Balance depth with breadth appropriate for the venue and available space
+
+    **YOUR RESEARCH THEME**:
+      
+      {research_theme}
+    
+  expected_output: >
+    A comprehensive, rich, diverse 'Related works' section, according to NeurIPS standards and style.
+    Your section should:
+
+      - Be a well-structured academic prose.
+      
+      - Have proper paragraph breaks and section organization.
+
+      - Be approximately 400-800 words (adjust based on paper count and complexity).
